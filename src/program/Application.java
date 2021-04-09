@@ -2,6 +2,9 @@ package program;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Pattern;
+
+import custonException.LetterFormatException;
 
 import model.CouterOfTimesForEachNumberUsed;
 import model.NumberC;
@@ -13,7 +16,7 @@ import model.NumberV;
 import model.NumberX;
 
 public class Application {
-
+///singnifica que é para continuar usando
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
@@ -31,8 +34,8 @@ public class Application {
 			 * Além disso, adiciono a regra de não poder ter certos tipos de caracteres 
 			 * em determinada posição, como LLL.
 			 */
-			String[] letters = input.nextLine().split(""); 
 			
+			String[] letters = input.nextLine().split(""); 
 			System.out.println(Arrays.toString(letters)); //sai o array com as três letras
 
 			Integer letterToOrdinaryNumber_one = 0;

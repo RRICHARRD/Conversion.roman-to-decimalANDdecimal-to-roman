@@ -19,7 +19,8 @@ public class CouterOfTimesForEachNumberUsed {
 	
 	private static void showInPrompt(int[] timesEachLetterUsed) {
 		
-		System.out.println("** - Times of each letter was used - **");
+		System.out.println("***************************************");
+		System.out.println("   - Times of each letter was used -   ");
 		System.out.println("I: " + timesEachLetterUsed[0]);
 		System.out.println("V: " + timesEachLetterUsed[1]);
 		System.out.println("X: " + timesEachLetterUsed[2]);
