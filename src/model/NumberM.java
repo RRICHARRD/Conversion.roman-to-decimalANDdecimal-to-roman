@@ -1,16 +1,21 @@
 package model;
 
-public class NumberM {
+public final class NumberM extends RomanNumber {
 
-	public int letterValue;
-	public static int timesUsed = 0;
+	private static final int M = 1000;
+	private static int timesUsed = 0;
 	
 	public NumberM() {
+		super(M);
 		++timesUsed;
-		 letterValue = 1000;
+	}
+
+	public static int getNumericalValueOfLetterM() {
+		return M;
 	}
 	
-	public static String numberValueOfM() {
-		return "1000";
+	public static int getTimesUsed() {
+		return timesUsed;
 	}
+	
 }

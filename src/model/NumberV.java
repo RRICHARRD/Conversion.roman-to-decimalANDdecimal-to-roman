@@ -1,23 +1,21 @@
 package model;
 
-/**
- * 
- * @author Richard Guilherme
- *
- */
-public class NumberV {
+public final class NumberV extends RomanNumber {
 
-	public int letterValue;
-	public static int timesUsed = 0;
+	private static final int V = 5;
+	private static int timesUsed = 0;
 	
 	public NumberV() {
+		super(V);
 		++timesUsed;
-		 letterValue = 5;
 	}
 	
-	public static String numberValueOfV() {
-		return "5";
+	public static final int getNumericalValueOfLetterV() {
+		return V;
 	}
 	
-	
+	public static int getTimesUsed() {
+		return timesUsed;
+	}
+
 }
