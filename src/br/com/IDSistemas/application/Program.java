@@ -5,6 +5,7 @@ import java.util.Scanner;
 import br.com.IDSistemas.application.model.CouterOfTimesForEachNumberWasUsed;
 import br.com.IDSistemas.application.model.RomanLetterToHinduArabicNumeralSystem;
 import br.com.IDSistemas.application.model.RomanNumberValidPatterns;
+import converingInduArabicToRomanLetters.ConvertingInduArabicToRomanLetters;
 
 public final class Program {
 
@@ -18,8 +19,15 @@ public final class Program {
 			CouterOfTimesForEachNumberWasUsed romanNumbersStatisticsOfUse = new CouterOfTimesForEachNumberWasUsed();
 			romanNumbersStatisticsOfUse.allTimesEachNumberWasUsed();
 			
+			
 			String romanNumeral = RomanNumberValidPatterns.inputValidRomanNumbers();
-
+			
+			ConvertingInduArabicToRomanLetters generatorOfRomanNumberFromDecimal = new ConvertingInduArabicToRomanLetters();
+			
+			@SuppressWarnings("unused")
+			String arabicNumeral = generatorOfRomanNumberFromDecimal.inputDecimalNumberAndConverToRomanLetter();
+			
+			
 			romanNumbersStatisticsOfUse.HowManyTimesEachNumberWasUsed(romanNumeral);
 		
 			RomanLetterToHinduArabicNumeralSystem romanNumeralsConverter = new RomanLetterToHinduArabicNumeralSystem();

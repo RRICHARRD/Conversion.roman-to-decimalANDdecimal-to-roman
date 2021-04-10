@@ -21,7 +21,7 @@ public final class RomanNumberValidPatterns {
 				System.out.print("Enter with a valid roman number\n->");
 				letters = input.nextLine().toUpperCase();
 				
-				verifyingIfRomanPatternIsCorrect(letters);
+				verifyingIfRomanPatternIsValid(letters);
 				break;
 			} catch(final LetterFormatException exception) {
 				System.err.println(exception.getMessage());
@@ -33,7 +33,7 @@ public final class RomanNumberValidPatterns {
 		return letters;
 	}
 	
-	public static boolean verifyingIfRomanPatternIsCorrect(String letters) throws LetterFormatException {
+	public static boolean verifyingIfRomanPatternIsValid(String letters) throws LetterFormatException {
 		 
 		boolean verification = Pattern.matches("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$", letters);
 		
