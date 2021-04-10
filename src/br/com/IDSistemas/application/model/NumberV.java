@@ -1,12 +1,11 @@
-package model;
+package br.com.IDSistemas.application.model;
 
-public final class NumberV extends RomanNumber {
+public final class NumberV {
 
 	private static final int V = 5;
 	private static int timesUsed = 0;
 	
 	public NumberV() {
-		super(V);
 		++timesUsed;
 	}
 	

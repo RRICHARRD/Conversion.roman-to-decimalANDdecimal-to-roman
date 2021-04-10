@@ -1,13 +1,4 @@
-package rulesToSumAndSub;
-
-import model.NumberC;
-import model.NumberD;
-import model.NumberL;
-import model.NumberM;
-import model.NumberV;
-import model.NumberX;
-import model.NumberI;
-import model.RomanNumberValidPatterns;
+package br.com.IDSistemas.application.model;
 
 public final class RomanLetterToHinduArabicNumeralSystem {
 
@@ -16,7 +7,7 @@ public final class RomanLetterToHinduArabicNumeralSystem {
 		switch(romanCaracter) {
 		
 			case 'I':
-				return NumberI.getNumericalValueOfLetterI(); //Talvez instanciando um objeto e passando a propriedade resolve dois problemas de uma vez
+				return NumberI.getNumericalValueOfLetterI(); 
 			case 'V':
 				return NumberV.getNumericalValueOfLetterV();
 			case 'X':
@@ -61,16 +52,4 @@ public final class RomanLetterToHinduArabicNumeralSystem {
 		return finalResult;
 	}
 
-	public static void main(String[] args) {
-
-		String romanNumeral = RomanNumberValidPatterns.inputValidRomanNumbers();
-
-		RomanLetterToHinduArabicNumeralSystem object = new RomanLetterToHinduArabicNumeralSystem();
-		
-		int arabicNumber = object.romanNumberToArabicNumber(romanNumeral);
-		
-		System.out.printf("%n%s roman numeral system is %d in Hindu-Arabic numeral system!", romanNumeral, arabicNumber);
-
-	
-	}
 }

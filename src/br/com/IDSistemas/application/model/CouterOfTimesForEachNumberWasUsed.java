@@ -1,8 +1,44 @@
-package model;
+package br.com.IDSistemas.application.model;
 
 public final class CouterOfTimesForEachNumberWasUsed {
 
-	public static void showAllTimesEachNumberWasUsed() {
+	public void HowManyTimesEachNumberWasUsed(String numericalRomanLetters) {
+		
+		String[] arrayOfNumericalRomanLetters = numericalRomanLetters.split("");
+		
+		for (int i = 0; i < arrayOfNumericalRomanLetters.length; i++) {
+			
+			switch (arrayOfNumericalRomanLetters[i]) {
+
+				case "I": 
+					new NumberI(); 
+					break;
+				case "V":
+					new NumberV();
+					break;
+				case "X":
+					new NumberX();
+					break;
+				case "L":
+					new NumberL();
+					break;
+				case "C":
+					new NumberC();
+					break;
+				case "D":
+					new NumberD();
+					break;
+				case "M":
+					new NumberM();
+					break;
+				default:
+					break;
+			}
+		}
+
+	}
+	
+	public void allTimesEachNumberWasUsed() {
 		
 		Integer I = NumberI.getTimesUsed();
 		Integer V = NumberV.getTimesUsed();
@@ -17,9 +53,9 @@ public final class CouterOfTimesForEachNumberWasUsed {
 		showInPrompt(timesEachLetterWasUsed);
 	}
 	
-	private static void showInPrompt(int[] timesEachLetterWasUsed) {
+	private void showInPrompt(int[] timesEachLetterWasUsed) {
 		
-		System.out.println("***************************************");
+		System.out.println("\n***************************************");
 		System.out.println("   - Times of each letter was used -   ");
 		System.out.println("I: " + timesEachLetterWasUsed[0]);
 		System.out.println("V: " + timesEachLetterWasUsed[1]);
