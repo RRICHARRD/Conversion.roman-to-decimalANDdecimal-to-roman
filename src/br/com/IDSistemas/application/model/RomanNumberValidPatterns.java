@@ -3,7 +3,7 @@ package br.com.IDSistemas.application.model;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import br.com.IDSistemas.custonException.LetterFormatException;
+import br.com.IDSistemas.custonExceptions.LetterFormatException;
 
 public final class RomanNumberValidPatterns {
 	
@@ -44,7 +44,7 @@ public final class RomanNumberValidPatterns {
 										  + "\nD, L, V only 1 time"
 										  + "\n\nExample: Use IV to represent the arabic numeral 4, not IIII");
 		} else {
-			return false;
+			return true;
 		}
 	}
 	

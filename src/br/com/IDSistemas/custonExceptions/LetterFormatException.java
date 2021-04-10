@@ -1,4 +1,4 @@
-package br.com.IDSistemas.custonException;
+package br.com.IDSistemas.custonExceptions;
 
 public final class LetterFormatException extends Exception {
 
