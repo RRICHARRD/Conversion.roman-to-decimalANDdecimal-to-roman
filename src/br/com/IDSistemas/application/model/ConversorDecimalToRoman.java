@@ -1,7 +1,5 @@
 package br.com.IDSistemas.application.model;
 
-import java.util.Scanner;
-
 public final class ConversorDecimalToRoman {
 
 	public String generateRomanNumber(int decimalNumber) {
@@ -19,29 +17,6 @@ public final class ConversorDecimalToRoman {
 		String convertion = thousands + hundereds + tens + ones;
 
 		return convertion;
-	}
-	
-	public String xxx(String validRomanNumeral) {
-		
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in);
-		int arabicNumeralNumbers = 0;
-
-		try {
-			arabicNumeralNumbers = Integer.parseInt(input.nextLine().trim());
-//			limitOfInduArabicNumberal(arabicNumeralNumbers);
-			
-		} catch (final NumberFormatException exception) {
-			System.err.println("Please, utilize just an integer number.");
-//		} catch (final EnormousArabicNumberException | TinyArabicNumberException exception) {
-//			System.err.println(exception.getMessage());
-//		} catch (final ZeroException exception) {
-//			System.err.println(exception.getMessage());
-		}
-			
-			String romanNumeral = generateRomanNumber(arabicNumeralNumbers);
-			
-			return romanNumeral;
 	}
 	
 }

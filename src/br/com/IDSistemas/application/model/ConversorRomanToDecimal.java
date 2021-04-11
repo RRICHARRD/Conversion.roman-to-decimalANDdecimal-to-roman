@@ -25,7 +25,7 @@ public final class ConversorRomanToDecimal {
 		}
 	}		
 		
-	public int convert(String romanNumeral) {
+	public int generateDecimal(String romanNumeral) {
 		
 		int finalResult = 0;
 

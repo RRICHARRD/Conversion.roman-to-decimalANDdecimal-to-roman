@@ -2,13 +2,30 @@ package br.com.IDSistemas.application.model;
 
 public final class StatisticsOfUse {
 
-	public void xxx(String numericalRomanLetters) {
+	public void show(String numericalRomanLetters) {
 		
 		makeStatistics(numericalRomanLetters);
 		getTimesUsedOfAllNumbers(numericalRomanLetters);
 	}
 	
+	public String changingDecimalToRomanIfNecessary(String decimalNumber) {
+		
+		if(decimalNumber.matches("^\\d+(\\.\\d+)?")) {
+			
+			ConversorDecimalToRoman generateRoman = new ConversorDecimalToRoman();
+			String romanNumber = generateRoman.generateRomanNumber(Integer.parseInt(decimalNumber));
+		
+			return romanNumber;
+		} else {
+			
+			return decimalNumber;
+		}
+		
+	}
+	
 	public void makeStatistics(String numericalRomanLetters) {
+		
+		numericalRomanLetters = changingDecimalToRomanIfNecessary(numericalRomanLetters);
 		
 		String[] arrayOfNumericalRomanLetters = numericalRomanLetters.split("");
 		
@@ -57,12 +74,13 @@ public final class StatisticsOfUse {
 		int[] allRomanNumbers = { I, V, X, L, C, D, M };
 		
 		showStatisticsInPrompt(allRomanNumbers, userNumeralRoman);
+		
 	}
 	
 	private void showStatisticsInPrompt(int[] allRomanNumbers, String userNumeralRoman) {
 		
 		System.out.println("\n***************************************");
-		System.out.println("   - Times of each letter of "+ userNumeralRoman +" was used -   ");
+		System.out.println("   - Times that each letter of "+ userNumeralRoman +" was used -   ");
 		System.out.println("I: " + allRomanNumbers[0]);
 		System.out.println("V: " + allRomanNumbers[1]);
 		System.out.println("X: " + allRomanNumbers[2]);

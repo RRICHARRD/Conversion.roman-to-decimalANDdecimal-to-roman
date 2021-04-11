@@ -9,22 +9,7 @@ import br.com.IDSistemas.application.custonExceptions.ZeroInputException;
 
 public final class ValidatorRomanPattern {
 	
-	public static String inputValidRomanNumbers(String letters) {
-				
-		letters = letters.toUpperCase();
-		
-		try {
-			verifyingIfRomanPatternIsValid(letters);
-		} catch(final IlegalRomanPatternException exception) {
-			System.err.println(exception.getMessage());
-		}
-		
-		System.out.printf("\n%s is a valid roman pattern !", letters);
-
-		return letters;
-	}
-	
-	public static boolean verifyingIfRomanPatternIsValid(String letters) throws IlegalRomanPatternException {
+	public boolean validNumeralRoman(String letters) throws IlegalRomanPatternException {
 		 
 		boolean verification = Pattern.matches("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$", letters);
 		
@@ -39,15 +24,19 @@ public final class ValidatorRomanPattern {
 		}
 	}
 	
-	public void decimalLimit(int decimalNumber) throws TinyDecimalException, ZeroInputException, EnormousDecimalException {
+	public void decimalLimit(int decimalNumber) 
+			throws TinyDecimalException, ZeroInputException, EnormousDecimalException {
 		
-		if (decimalNumber > 3888) {
+		if(decimalNumber >= 1 && decimalNumber <= 3888) {
+			return;
+		} else if (decimalNumber >= 3889) {
 			throw new EnormousDecimalException("Please, do not use numbers greater than 3888!");
-		} else if (decimalNumber < 0) {
-			throw new TinyDecimalException("Please, do not use numbers less than 0!");
 		} else if(decimalNumber == 0) {
 			throw new ZeroInputException("The number 0 is represented by \"0\", \"none\" or \"nulla\" in roman numerical system."
 								  + "\nFor this program, 0 is not a valid input.");
+		} else if(decimalNumber < 0){
+			throw new TinyDecimalException("Please, do not use numbers less than 0!"); 			
 		}
 	}
+	
 }
