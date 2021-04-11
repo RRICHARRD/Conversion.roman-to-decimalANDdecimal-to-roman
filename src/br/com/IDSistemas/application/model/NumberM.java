@@ -20,4 +20,5 @@ public final class NumberM {
 	public static void setTimesUsedToZero() {
 		timesUsed = 0;
 	}
+
 }

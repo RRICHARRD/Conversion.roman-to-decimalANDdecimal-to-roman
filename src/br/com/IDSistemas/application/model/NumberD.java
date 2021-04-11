@@ -17,7 +17,7 @@ public final class NumberD {
 		return timesUsed;
 	}
 	
-	public static void setStatisticsToZero() {
+	public static void setTimesUsedTozero() {
 		timesUsed = 0;
 	}
 	

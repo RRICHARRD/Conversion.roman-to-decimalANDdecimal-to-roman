@@ -100,8 +100,8 @@ public final class StatisticsOfUse {
 		NumberX.setTimesUsedToZero();
 		NumberL.setTimesUsedToZero();
 		NumberC.setTimesUsedToZero();
-		NumberD.setStatisticsToZero();
-		NumberD.setStatisticsToZero();
+		NumberD.setTimesUsedTozero();
+		NumberM.setTimesUsedToZero();
 	}
 	
 }
