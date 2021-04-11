@@ -19,7 +19,7 @@ public final class Program {
 		
 		Scanner input = new Scanner(System.in);
 		InputValidator typeTester = new InputValidator();
-		String response;
+		String response = "";
 		
 		do {
 			
@@ -31,12 +31,13 @@ public final class Program {
 			
 			} catch (final NumberFormatException | TinyDecimalException exception) {
 				System.err.println(exception.getMessage());
+				continue;
 			} catch(final ZeroInputException | EnormousDecimalException exception) {
 				System.err.println(exception.getMessage());
-			} catch (final IlegalRomanPatternException exception) {
+				continue;
+			} catch (final IlegalRomanPatternException | EmptyInputException exception) {
 				System.err.println(exception.getMessage());
-			} catch (final EmptyInputException exception) {
-				System.err.println(exception.getMessage());
+				continue;
 			}
 		
 			System.out.print("\n\nPress enter key if you want to convert another time \nor type \"stop\" to stop the program\n->");
