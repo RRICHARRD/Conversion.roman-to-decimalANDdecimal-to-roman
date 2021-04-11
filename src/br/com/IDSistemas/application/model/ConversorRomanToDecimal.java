@@ -1,6 +1,6 @@
 package br.com.IDSistemas.application.model;
 
-public final class RomanLetterToHinduArabicNumeralSystem {
+public final class ConversorRomanToDecimal {
 
 	private int valueOfLetterNumberCaracter(char romanCaracter) {
 		
@@ -25,16 +25,16 @@ public final class RomanLetterToHinduArabicNumeralSystem {
 		}
 	}		
 		
-	public int romanNumberToArabicNumber(String romanNumbers) {
+	public int convert(String romanNumeral) {
 		
 		int finalResult = 0;
 
-		for (int i = 0; i < romanNumbers.length(); i++) {
+		for (int i = 0; i < romanNumeral.length(); i++) {
 			
-			int caracterOne = valueOfLetterNumberCaracter(romanNumbers.charAt(i));
+			int caracterOne = valueOfLetterNumberCaracter(romanNumeral.charAt(i));
 
-			if (i + 1 < romanNumbers.length()) { 
-				int caracterTwo = valueOfLetterNumberCaracter(romanNumbers.charAt(i + 1));
+			if (i + 1 < romanNumeral.length()) { 
+				int caracterTwo = valueOfLetterNumberCaracter(romanNumeral.charAt(i + 1));
 
 				if (caracterOne >= caracterTwo) {
 					

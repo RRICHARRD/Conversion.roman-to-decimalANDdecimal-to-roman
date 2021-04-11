@@ -16,5 +16,9 @@ public final class NumberV {
 	public static int getTimesUsed() {
 		return timesUsed;
 	}
+	
+	public static void setTimesUsedToZero() {
+		timesUsed = 0;
+	}
 
 }

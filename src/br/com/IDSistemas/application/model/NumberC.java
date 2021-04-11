@@ -17,4 +17,8 @@ public final class NumberC {
 		return timesUsed;
 	}
 	
+	public static void setTimesUsedToZero() {
+		timesUsed = 0;
+	}
+	
 }

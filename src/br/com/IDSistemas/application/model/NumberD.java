@@ -17,4 +17,8 @@ public final class NumberD {
 		return timesUsed;
 	}
 	
+	public static void setStatisticsToZero() {
+		timesUsed = 0;
+	}
+	
 }
