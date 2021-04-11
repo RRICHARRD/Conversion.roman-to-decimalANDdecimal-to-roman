@@ -2,11 +2,13 @@ package br.com.IDSistemas.application.model;
 
 import java.util.Scanner;
 
+import br.com.IDSistemas.application.custonExceptions.EmptyInputException;
+
 public class InputValidator {
 	
 	private Scanner input = new Scanner(System.in);
 	
-	public String[] isDecimalOrString() {
+	public String[] isDecimalOrString() throws EmptyInputException {
 		
 		firstBanner();
 		
@@ -14,7 +16,9 @@ public class InputValidator {
 		
 		String[] returningFirstInput = new String[2];
 		
-		if(firstInput.matches("^-?\\d+(\\.\\d+)?")) {
+		if(firstInput.isEmpty()) {
+			throw new EmptyInputException("Utilize only decimal or roman numbers to convert !");
+		} else if(firstInput.matches("^-?\\d+(\\.\\d+)?")) {
 			returningFirstInput[0] = "decimal";
 			returningFirstInput[1] = firstInput;
 		} else {

@@ -2,6 +2,7 @@ package br.com.IDSistemas.application;
 
 import java.util.Scanner;
 
+import br.com.IDSistemas.application.custonExceptions.EmptyInputException;
 import br.com.IDSistemas.application.custonExceptions.EnormousDecimalException;
 import br.com.IDSistemas.application.custonExceptions.IlegalRomanPatternException;
 import br.com.IDSistemas.application.custonExceptions.TinyDecimalException;
@@ -17,14 +18,14 @@ public final class Program {
 	public static void start() {
 		
 		Scanner input = new Scanner(System.in);
+		InputValidator typeTester = new InputValidator();
 		String response;
 		
 		do {
-			InputValidator typeTester = new InputValidator();
-			String[] userInput = typeTester.isDecimalOrString();
-					
 			
 			try {
+				String[] userInput = typeTester.isDecimalOrString();
+				
 				@SuppressWarnings("unused")
 				Program conversorProgram = new Program(userInput);
 			
@@ -33,6 +34,8 @@ public final class Program {
 			} catch(final ZeroInputException | EnormousDecimalException exception) {
 				System.err.println(exception.getMessage());
 			} catch (final IlegalRomanPatternException exception) {
+				System.err.println(exception.getMessage());
+			} catch (final EmptyInputException exception) {
 				System.err.println(exception.getMessage());
 			}
 		
